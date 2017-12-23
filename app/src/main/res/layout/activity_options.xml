@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="edray.ringoffire.OptionsActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Wähle die Anzahl der Karten"
+        android:id="@+id/textView3"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentStart="true"
+        android:id="@+id/radioGroup">
+        <RadioButton
+            android:id="@+id/radio32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="32 Karten"
+            android:checked="true"
+            android:onClick="radioCardClicked"/>
+        <RadioButton
+            android:id="@+id/radio52"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="52 Karten"
+            android:onClick="radioCardClicked"/>
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Mit welchen Regeln willst du spielen?"
+        android:id="@+id/textView4"
+        android:layout_below="@+id/radioGroup"
+        android:layout_alignParentStart="true" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView4"
+        android:layout_alignParentStart="true">
+        <RadioButton
+            android:id="@+id/radioDefault"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vordefinierte Regeln"
+            android:checked="true"
+            android:onClick="radioRuleClicked"/>
+        <RadioButton
+            android:id="@+id/radioOwn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Eigene Regeln (müssen im Hauptmenü definiert werden)"
+            android:onClick="radioRuleClicked"/>
+    </RadioGroup>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Los Geht&apos;s"
+        android:id="@+id/button"
+        android:onClick="startGame"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
