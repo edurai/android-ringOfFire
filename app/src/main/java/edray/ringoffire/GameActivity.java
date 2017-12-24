@@ -1,6 +1,7 @@
 package edray.ringoffire;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,6 +26,7 @@ public class GameActivity extends AppCompatActivity {
     private String drinkBreak = "";
     public boolean cards32;
     public boolean defRule;
+    public SharedPreferences spCards;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class GameActivity extends AppCompatActivity {
         Intent intent = getIntent();
         cards32 = intent.getExtras().getBoolean(CARDRADIO);
         defRule = intent.getExtras().getBoolean(RULERADIO);
+        spCards = getSharedPreferences("SPRules", 0);
 
         // Checks options set by user for number of cards
         if (cards32){
@@ -93,9 +96,13 @@ public class GameActivity extends AppCompatActivity {
         int newCard = check(randomCard, card, cards, cardCounter, totalCs);
 
         // Render the texts to the display
-        String effect = card.effect(newCard);
         breakText.setText(drinkBreak);
-        cardText.setText(effect);
+        if (defRule){
+            cardText.setText(card.effect(newCard));
+        }
+        else {
+            cardText.setText(spCards.getString(Integer.toString(newCard), card.effect(newCard)));
+        }
 
         // Recalculate (removing used cards from array)
         card.type[newCard] -= 1;

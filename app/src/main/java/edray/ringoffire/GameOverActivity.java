@@ -13,11 +13,13 @@ public class GameOverActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game_over);
     }
 
+    // After the game is over switch to the main menu
     public void switchMenu (View v){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
+    // After the game is over switch to the options menu to restart the game
     public void start (View v){
         Intent intent = new Intent(this, OptionsActivity.class);
         startActivity(intent);

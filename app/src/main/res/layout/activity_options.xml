@@ -30,13 +30,13 @@
             android:layout_height="wrap_content"
             android:text="32 Karten"
             android:checked="true"
-            android:onClick="radioCardClicked"/>
+            android:onClick="radioClicked"/>
         <RadioButton
             android:id="@+id/radio52"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="52 Karten"
-            android:onClick="radioCardClicked"/>
+            android:onClick="radioClicked"/>
     </RadioGroup>
 
     <TextView
@@ -59,13 +59,13 @@
             android:layout_height="wrap_content"
             android:text="Vordefinierte Regeln"
             android:checked="true"
-            android:onClick="radioRuleClicked"/>
+            android:onClick="radioClicked"/>
         <RadioButton
             android:id="@+id/radioOwn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Eigene Regeln (müssen im Hauptmenü definiert werden)"
-            android:onClick="radioRuleClicked"/>
+            android:onClick="radioClicked"/>
     </RadioGroup>
 
     <Button
