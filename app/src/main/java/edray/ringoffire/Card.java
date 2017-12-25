@@ -7,13 +7,17 @@ package edray.ringoffire;
 public class Card {
 
     // Array containing all 13 card types
-    public int[] type = new int[13];
+    public int[][] type = new int[13][5];
 
     // Card gets initialized with either 8 or 13 types, depending on game mode
     // Every type has 4 different cards (heart, spades, check, cross)
     public Card (int eightOrThirteen){
         for (int i = 0; i<eightOrThirteen; i++){
-            this.type[i] = 4;
+            this.type[i][4] = 4;
+            this.type[i][3] = 1;
+            this.type[i][2] = 1;
+            this.type[i][1] = 1;
+            this.type[i][0] = 1;
         }
     }
 

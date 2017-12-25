@@ -1,5 +1,6 @@
 package edray.ringoffire;
 
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,11 +10,16 @@ public class RulesActivity extends AppCompatActivity {
 
     public final String CARDTYPE = "CardType";
     public int type;
+    public SharedPreferences spCards;
+    public String test;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rules);
+        spCards = getSharedPreferences("SPRules", 0);
+        test = spCards.getString("13", "0");
+
     }
 
     // Chose the right card to edit the rule
@@ -61,9 +67,13 @@ public class RulesActivity extends AppCompatActivity {
                 break;
         }
         intent.putExtra(CARDTYPE, type);
-        System.out.println(type);
         startActivity(intent);
     }
+
+   /* public void saveRules(View v){
+        Intent intent = new Intent(this, SaveLoadRulesActivity.class);
+        startActivity(intent);
+    }*/
 
     public void back(View v){
         Intent intent = new Intent(this, MainActivity.class);

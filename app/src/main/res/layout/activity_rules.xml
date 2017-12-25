@@ -135,8 +135,8 @@
         android:layout_height="wrap_content"
         android:text="Zurück"
         android:id="@+id/backToMenuButton"
-        android:layout_below="@+id/cardA"
         android:onClick="back"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="28dp" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>
